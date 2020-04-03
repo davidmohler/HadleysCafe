@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert New Beverage</title>
+</head>
+<body>
+<form th:object="${newBeverage}" th:action="@{/update/{id}(id=${newBeverage.id})}" method=POST>
+Brand: <input name="brand" size="20" th:field="*{brand}"><br />
+Flavor: <input name="flavor" size="20" th:field="*{flavor}"><br />
+Purchase Count: <input name="purchaseCount" size="20" th:field="*{purchaseCount}"><br />
+Purchase Cost: <input name="purchaseCost" size="20" th:field="*{purchaseCost}"><br />
+<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Beverages</a> </body>
+</html>

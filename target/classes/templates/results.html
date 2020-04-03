@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>View All Beverages</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentBeverage: ${beverages}">
+	<td th:text="${currentBeverage.id}" />
+	<td th:text="${currentBeverage.brand}" />
+	<td th:text="${currentBeverage.flavor}" />
+	<td th:text="${currentBeverage.purchaseCount}" />
+	<td th:text="${currentBeverage.purchaseCost}" />
+	<td><a th:href="@{/edit/{id}(id=${currentBeverage.id})}">Edit</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentBeverage.id})}">Delete</a></td>
+	</tr>
+</table>
+</form>
+<a href="../inputBeverage">Add a new beverage</a> </body>
+</html>
